@@ -17,7 +17,7 @@ void add(ll x,ll k){
 }
 ll sum(ll k){
     ll ret=0;
-    for(ll i=k;i;i-=lowbit(i))
+    for(ll i=k;i>0;i-=lowbit(i))
         ret+=bit[i];
     return ret;
 }
@@ -31,11 +31,11 @@ int main(){
     for(ll i=1;i<=n;i++){
         cin>>a[i];
     }
-    for(ll i=1;i<=n;i++){
+    for(ll i=1;i<=m;i++){
         cin>>q[i].l>>q[i].r;
         q[i].id=i;
     }
-    sort(q+1,q+n+1,[](Node a,Node b){
+    sort(q+1,q+m+1,[](Node a,Node b){
         return a.r<b.r;
     });
     ll pos=1;
@@ -50,7 +50,7 @@ int main(){
         }
         ans[q[i].id]=query(q[i].l,q[i].r);
     }
-    for(ll i=1;i<=n;i++){
+    for(ll i=1;i<=m;i++){
         cout<<ans[i]<<"\n";
     }
     return 0;
