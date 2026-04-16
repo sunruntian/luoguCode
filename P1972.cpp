@@ -44,8 +44,8 @@ int main(){
         while(pos<=q[i].r){
             ll t=a[pos];
             if(last[t])add(last[t],-1);
-            if(t)add(t,1);
-            last[t]=t;
+            if(pos)add(pos,1);
+            last[t]=pos;
             pos++;
         }
         ans[q[i].id]=query(q[i].l,q[i].r);
