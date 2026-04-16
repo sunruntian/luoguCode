@@ -4,13 +4,13 @@ using namespace std;
 ll lowbit(ll x){
 	return x&-x;
 }
-ll bit[2000005];ll n,c,m;
-ll last[2000005];
-ll a[2000005];
+ll bit[1000005];ll n,c,m;
+ll last[1000005];
+ll a[1000005];
 struct Node{
     ll l,r,id;
-}q[2000005];
-ll ans[2000005];
+}q[1000005];
+ll ans[1000005];
 void add(ll x,ll k){
     for(ll i=x;i<=n;i+=lowbit(i))
         bit[i]+=k;
@@ -36,7 +36,6 @@ int main(){
         cin>>q[i].l>>q[i].r;
         q[i].id=i;
     }
-
     sort(q+1,q+m+1,[](Node a,Node b){
         return a.r<b.r;
     });
