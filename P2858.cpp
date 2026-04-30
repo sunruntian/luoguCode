@@ -2,7 +2,7 @@
 typedef long long ll;
 using namespace std;
 ll n;
-ll v[1005],f[1005][1005];
+ll v[2005],f[2005][2005];
 ll dfs(ll l,ll r,ll d){
     if(l>r)return 0;
     if(f[l][r]) return f[l][r];
